@@ -9,6 +9,14 @@
  const tipos = ['C','D','H','S'];
  const especiales = ['A','J','Q','K'];
 
+ let puntosJugador = 0,
+     puntosComputadora = 0;
+
+ //referencias
+ const btnPedir = document.querySelector('#btnPedir');
+
+ const puntosHTML = document.querySelectorAll('small');
+
  //crea una nueva baraja
  const crearDeck = () => {
 
@@ -16,6 +24,7 @@
         for( let tipo of tipos ){
             deck.push( i + tipo );
     }
+
 }
 
     for( let tipo of tipos ) {
@@ -57,7 +66,18 @@ const valorCarta = ( carta ) => {
             : valor * 1;
 }
 
-const valor = valorCarta( pedirCarta() );
-console.log( {valor} );
 
+
+//eventos
+btnPedir.addEventListener('click', () => {
+
+    const carta = pedirCarta();
+
+    puntosJugador = puntosJugador + valorCarta( carta );
+    puntosHTML[0].innerText = puntosJugador
+
+    
+});
+
+;
 
