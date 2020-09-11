@@ -114,7 +114,7 @@ const crearDeck = () =>  {
          divCartasJugador.append(imgCarta);
 
          if(puntosJugador > 21 ){
-             console.warn('GAME OVER, perdiste');
+             console.warn('Perdiste');
              btnPedir.disabled = true;
              btnDetener.disabled = true;
              turnoComputadora(puntosJugador);
